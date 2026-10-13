@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Pizza Gesture Toy - Sauce Spread</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="station" aria-label="Pizza sauce spreading prototype">
+        <header class="top-bar">
+          <div>
+            <p class="eyebrow">Prototype 01</p>
+            <h1>Sauce Spread</h1>
+          </div>
+          <div class="meter-row" aria-label="Quality meters">
+            <div class="meter">
+              <span>Coverage</span>
+              <strong id="coverageLabel">Ready</strong>
+            </div>
+            <div class="meter">
+              <span>Rim</span>
+              <strong id="rimLabel">Clean</strong>
+            </div>
+            <div class="meter">
+              <span>Spread</span>
+              <strong id="spreadLabel">Start</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="ingredient-row" aria-label="Ingredient cards">
+          <button class="ingredient-card ingredient-card-active" type="button" aria-pressed="true">
+            <span class="ingredient-preview sauce-preview"></span>
+            <span>Tomato Sauce</span>
+          </button>
+          <button class="ingredient-card" type="button" disabled>
+            <span class="ingredient-preview cheese-preview"></span>
+            <span>Cheese</span>
+          </button>
+          <button class="ingredient-card locked" type="button" disabled>
+            <span class="ingredient-preview pepperoni-preview"></span>
+            <span>Locked</span>
+          </button>
+        </div>
+
+        <div class="workbench">
+          <aside class="dough-tray" aria-label="Dough tray">
+            <div class="tray-title">Dough</div>
+            <div class="dough-grid" aria-hidden="true">
+              <span></span><span></span>
+              <span></span><span></span>
+              <span></span><span class="empty"></span>
+            </div>
+          </aside>
+
+          <section class="pizza-panel">
+            <div class="canvas-wrap">
+              <canvas id="pizzaCanvas" width="720" height="720" aria-label="Pizza dough canvas"></canvas>
+            </div>
+            <div class="controls">
+              <button id="resetBtn" type="button">Reset</button>
+              <button id="guideBtn" type="button" aria-pressed="true">Guide On</button>
+              <button id="finishBtn" type="button">Finish</button>
+            </div>
+          </section>
+        </div>
+
+        <footer class="feedback" aria-live="polite">
+          <p id="feedbackText">Drop into the center, then spiral outward. The goal is an even layer with a clean rim.</p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
